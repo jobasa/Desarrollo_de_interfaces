@@ -63,7 +63,7 @@ export default class Touchables extends Component {
         <View style={styles.container2}>
           <Text>{this.state.switchValue ? 'Switch es ON' : 'Switch es OFF'}</Text>
           <Switch
-            style={{ marginTop: 30 }}
+            style={{ marginTop: 30, backgroundColor: 'blue' }}
             onValueChange={this.toggleSwitch}
             value={this.state.switchValue} />
         </View>
