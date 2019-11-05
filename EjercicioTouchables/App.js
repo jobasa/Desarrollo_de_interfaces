@@ -57,7 +57,7 @@ export default class Touchables extends Component {
         </TouchableWithoutFeedback>
         <TouchableHighlight onPress={this._onPressButton} onLongPress={this._onLongPressButton} underlayColor="white">
           <View style={styles.button}>
-            <Text style={styles.buttonText}>Touchable with Long Press</Text>
+            <Text style={styles.buttonText}>Botón de pulsación larga</Text>
           </View>
         </TouchableHighlight>
         <View style={styles.container2}>
