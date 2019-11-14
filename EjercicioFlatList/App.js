@@ -6,52 +6,64 @@
  * @flow
  */
 
+
 import React from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text } from 'react-native';
+import { SafeAreaView, View, FlatList, StyleSheet, Text,Alert,TouchableWithoutFeedback } from 'react-native';
 
 
 const DATA = [
-  {
-    id: 'uno',
-    title: 'ALDIMIR',
-  },
-  {
-    id: 'dos',
-    title: 'ALVARO',
-  },
-  {
-    id: 'tres',
-    title: 'JOAN',
-  },
-  {
-    id: 'cuatro',
-    title: 'JAVIER',
-  },
-  {
-    id: 'cinco',
-    title: 'JAVIER',
-  },
+  { key: 'ALDIMIR' },
+  { key: 'ALVARO' },
+  { key: 'JOAN' },
+  { key: 'JAVIER B' },
+  { key: 'JAVIER C' },
+  { key: 'ADRIAN' },
+  { key: 'CLAUDIO' },
+  { key: 'LUIS' },
+  { key: 'JOSE A' },
+  { key: 'SERGIO G' },
+  { key: 'CRISTINA' },
+  { key: 'JOSEP' },
+  { key: 'FRANCISCO L' },
+  { key: 'FRANCISCO J' },
+  { key: 'GUILLERMO' },
+  { key: 'RUBEN' },
+  { key: 'JOSE M' },
+  { key: 'ENRIC' },
+  { key: 'JAUME' },
+  { key: 'TOMAS O' },
+  { key: 'JOSE O' },
+  { key: 'CRISTOBAL' },
+  { key: 'BORJA' },
+  { key: 'SERGIO Q' },
+  { key: 'GLORIA' },
+  { key: 'CARLOS' },
+  { key: 'JUAN T' },
+  { key: 'SERGIO T' },
+  { key: 'GRACIELA' },
 ];
 
-function Item({ title }) {
+function Item({ key }) {
   return (
     <View style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
+     <View style={styles.button}>
+       <Text style={styles.key} onPress={()=> Alert.alert({key})}>{key}</Text>
+     </View>
     </View>
   );
-}
-
-export default function App() {
+  }
+  export default class App extends React.Component {
+   render(){
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
         data={DATA}
-        renderItem={({ item }) => <Item title={item.title} />}
-        keyExtractor={item => item.id}
+        renderItem={({ item }) =>
+          <Text style={styles.item} onPress={()=> Alert.alert(item.key)}>{item.key}</Text>}
       />
     </SafeAreaView>
-  );
-}
+  );}
+  }
 
 
 const styles = StyleSheet.create({
@@ -60,13 +72,10 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   item: {
-    backgroundColor: '#f9c2ff',
+    backgroundColor: '#58ACFA',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 32,
   },
 });
 
